@@ -1,0 +1,6 @@
+C:\Users\Enrique\Documents\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\obj\x86\Debug\App_CatalogoCD.csprojResolveAssemblyReference.cache
+C:\Users\Enrique\Documents\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\bin\Debug\App_CatalogoCD.exe
+C:\Users\Enrique\Documents\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\bin\Debug\App_CatalogoCD.pdb
+C:\Users\Enrique\Documents\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\bin\Debug\MySql.Data.dll
+C:\Users\Enrique\Documents\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\obj\x86\Debug\App_CatalogoCD.exe
+C:\Users\Enrique\Documents\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\obj\x86\Debug\App_CatalogoCD.pdb
