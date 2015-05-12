@@ -24,13 +24,14 @@ namespace App_CatalogoCD
             try
                 {
                     if (dao.Conectar())
-                        Console.WriteLine("Conexión con éxito a la BD");
-					else 
-						Console.WriteLine("No se puede conectar a la BD");
+                        ;//Console.WriteLine("Conexión con éxito a la BD");
+                    else
+                        ;//Console.WriteLine("No se puede conectar a la BD");
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("ERROR: " + e.Message);
+                    //Console.WriteLine("ERROR: " + e.Message);
+                    throw new Exception("ERROR: " + e.Message);
                 }
 				this.LeerDVD ();
         }
@@ -74,7 +75,7 @@ namespace App_CatalogoCD
                     (ushort)rnd.Next(1900, 2016));
 
             _catalogoDVD.Add(unDVD);
-            Console.WriteLine("Resultado de la inserción: " + dao.Insertar(unDVD));
+            //Console.WriteLine("Resultado de la inserción: " + dao.Insertar(unDVD));
         }
 
         public void LeerDVD()
@@ -136,7 +137,7 @@ namespace App_CatalogoCD
             // Esto se escribirá en el fichero
             Console.WriteLine(this.Xml);
             Console.SetOut(tmp);    // Reestablezco la salida estandar
-            Console.WriteLine(@"Se ha creado el fichero: " + ruta);
+            //Console.WriteLine(@"Se ha creado el fichero: " + ruta);
             sw1.Close();
         }
 
@@ -145,13 +146,13 @@ namespace App_CatalogoCD
 			//_catalogoDVD = dao.SeleccionarPorPais("US");
 		}
 
-		public override string ToString ()
+		/*public override string ToString ()
 		{
 			String resultado = "\n";
 			foreach (var item in _catalogoDVD) {
 				resultado = resultado + item.ToString () + "\n";
 			}
 			return resultado;
-		}
+		}*/
     }
 }

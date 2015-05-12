@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-C:\Users\Enrique\Documents\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\obj\x86\Debug\App_CatalogoCD.csprojResolveAssemblyReference.cache
-C:\Users\Enrique\Documents\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\bin\Debug\App_CatalogoCD.exe
-C:\Users\Enrique\Documents\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\bin\Debug\App_CatalogoCD.pdb
-C:\Users\Enrique\Documents\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\bin\Debug\MySql.Data.dll
-C:\Users\Enrique\Documents\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\obj\x86\Debug\App_CatalogoCD.exe
-C:\Users\Enrique\Documents\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\obj\x86\Debug\App_CatalogoCD.pdb
-=======
 C:\Users\Sebas\Documents\Visual Studio 2010\Projects\App_CatalogoCD\App_CatalogoCD\bin\Debug\App_CatalogoCD.exe
 C:\Users\Sebas\Documents\Visual Studio 2010\Projects\App_CatalogoCD\App_CatalogoCD\bin\Debug\App_CatalogoCD.pdb
 C:\Users\Sebas\Documents\Visual Studio 2010\Projects\App_CatalogoCD\App_CatalogoCD\obj\x86\Debug\ResolveAssemblyReference.cache
@@ -29,7 +21,12 @@ D:\Usuario\Mis documentos\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQL
 D:\Usuario\Mis documentos\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\bin\Debug\System.Data.SQLite.pdb
 D:\Usuario\Mis documentos\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\obj\x86\Debug\App_CatalogoCD.GUI.resources
 D:\Usuario\Mis documentos\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\obj\x86\Debug\App_CatalogoCD.csproj.GenerateResource.Cache
->>>>>>> 4855dc1a3e8a7bf32605f01a49c7a6536c2fe0c5
 C:\Users\Enrique\Documents\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\bin\Debug\System.Data.SQLite.pdb
 C:\Users\Enrique\Documents\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\obj\x86\Debug\App_CatalogoCD.GUI.resources
 C:\Users\Enrique\Documents\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\obj\x86\Debug\App_CatalogoCD.csproj.GenerateResource.Cache
+C:\Users\Enrique\Documents\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\obj\x86\Debug\App_CatalogoCD.exe
+C:\Users\Enrique\Documents\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\obj\x86\Debug\App_CatalogoCD.pdb
+C:\Users\Enrique\Documents\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\obj\x86\Debug\App_CatalogoCD.csprojResolveAssemblyReference.cache
+C:\Users\Enrique\Documents\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\bin\Debug\App_CatalogoCD.exe
+C:\Users\Enrique\Documents\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\bin\Debug\App_CatalogoCD.pdb
+C:\Users\Enrique\Documents\ProyectosGIT\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\bin\Debug\MySql.Data.dll
