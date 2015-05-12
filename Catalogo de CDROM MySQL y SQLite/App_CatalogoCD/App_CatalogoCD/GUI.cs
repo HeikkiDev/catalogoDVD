@@ -12,9 +12,12 @@ namespace App_CatalogoCD
 {
     public partial class GUI : Form
     {
+        static Catalogo c;
+
         public GUI()
         {
             InitializeComponent();
+            c = new Catalogo();
         }
     }
 }
