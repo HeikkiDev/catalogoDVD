@@ -1,0 +1,18 @@
+﻿<Properties StartupItem="App_CatalogoCD/App_CatalogoCD.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="App_CatalogoCD/UI.cs">
+    <Files>
+      <File FileName="App_CatalogoCD/UI.cs" Line="138" Column="39" />
+      <File FileName="App_CatalogoCD/Catalogo.cs" Line="143" Column="14" />
+      <File FileName="App_CatalogoCD/DAOdvd.cs" Line="112" Column="32" />
+      <File FileName="App_CatalogoCD/DAOdvdSQLite.cs" Line="27" Column="5" />
+      <File FileName="App_CatalogoCD/dvd.cs" Line="156" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="App_CatalogoCD/UI.cs" line="57" offsetX="498" offsetY="1008" expression="registro" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+</Properties>
