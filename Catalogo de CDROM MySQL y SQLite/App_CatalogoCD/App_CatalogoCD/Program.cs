@@ -7,7 +7,7 @@ namespace App_CatalogoCD
     {
         static void Main(string[] args)
         {
-			new UI ();
+			//new UI ();
             Console.ReadLine();
         }
     }
