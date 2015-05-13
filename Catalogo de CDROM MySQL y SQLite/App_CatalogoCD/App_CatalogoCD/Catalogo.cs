@@ -12,7 +12,7 @@ namespace App_CatalogoCD
 		static public ushort contadorParaCodigo = 100;
 
         List<dvd> _catalogoDVD = new List<dvd>();
-        //DAOdvd dao = new DAOdvd();
+        DAOdvd daoMy = new DAOdvd();
 		DAOdvdSQLite dao = new DAOdvdSQLite();
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace App_CatalogoCD
 
 		public void FiltrarPorPais() 
 		{
-			//_catalogoDVD = dao.SeleccionarPorPais("US");
+			_catalogoDVD = daoMy.SeleccionarPorPais("US");
 		}
 
 		/*public override string ToString ()

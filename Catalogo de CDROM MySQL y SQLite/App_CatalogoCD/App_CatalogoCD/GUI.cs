@@ -37,6 +37,8 @@ namespace App_CatalogoCD
             {
                 MessageBox.Show(e.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            btnBoton1.Visible = false;
+            btnBoton2.Visible = false;
         }
 
         #region MIS MÉTODOS
@@ -64,6 +66,8 @@ namespace App_CatalogoCD
                     ficheroXML = c.Xml.Split('\n');
                     lbxClientes.Items.Clear();
                     lbxClientes.Items.AddRange(ficheroXML);
+                    listaCodigos.Clear(); //Para que no muestre info sin sentido en los textbox
+                    LimpiarTBoxs();
                     break;
                 case 2:
                     if (tbxCodigo.Text != string.Empty)
@@ -106,12 +110,23 @@ namespace App_CatalogoCD
                     c.XmlAFichero(ruta);
                     break;
                 case 6:
-                    c.FiltrarPorPais(); //Este no funciona porque la conexión es a Mysql, el resto a SQLite
-                    //RellenarListBox();
+                    c.FiltrarPorPais();
+                    RellenarListBox();
                     break;
                 default:
                     break;
             }
+        }
+
+        private void LimpiarTBoxs()
+        {
+            tbxCodigo.Text = string.Empty;
+            tbxTitulo.Text = string.Empty;
+            tbxArtista.Text = string.Empty;
+            tbxPais.Text = string.Empty;
+            tbxCompania.Text = string.Empty;
+            tbxPrecio.Text = string.Empty;
+            tbxAnio.Text = string.Empty;
         }
         #endregion
 
@@ -121,39 +136,39 @@ namespace App_CatalogoCD
             switch (comboBox1.SelectedIndex)
             {
                 case 0:
-                    btnBoton1.Enabled = true;
+                    btnBoton1.Visible = true;
                     btnBoton1.Text = "Leer DVD´s";
                     btnBoton2.Visible = false;
                     break;
                 case 1:
-                    btnBoton1.Enabled = true;
+                    btnBoton1.Visible = true;
                     btnBoton1.Text = "Leer en formato XML";
                     btnBoton2.Visible = false;
                     break;
                 case 2:
-                    btnBoton1.Enabled = true;
+                    btnBoton1.Visible = true;
                     btnBoton1.Text = "Añadir DVD al azar";
                     btnBoton2.Visible = false;
                     break;
                 case 3:
                     btnBoton1.Text = "Eliminar DVD";
-                    btnBoton1.Enabled = true;
+                    btnBoton1.Visible = true;
                     btnBoton2.Visible = false;
                     break;
                 case 4:
                     btnBoton1.Text = "Modificar DVD";
-                    btnBoton1.Enabled = true;
+                    btnBoton1.Visible = true;
                     btnBoton2.Visible = false;
                     break;
                 case 5:
-                    btnBoton1.Enabled = true;
-                    btnBoton2.Enabled = true;
+                    btnBoton1.Visible = true;
+                    //btnBoton2.Enabled = true;
                     btnBoton2.Visible = true;
                     btnBoton1.Text = "Volcar";
                     btnBoton2.Text = "Elegir ruta";
                     break;
                 case 6:
-                    btnBoton1.Enabled = true;
+                    btnBoton1.Visible = true;
                     btnBoton1.Text = "Listar por país";
                     btnBoton2.Visible = false;
                     break;
@@ -192,15 +207,19 @@ namespace App_CatalogoCD
         private void lbxClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
             dvd unDVD = new dvd();
-            unDVD = c.LeerDVD(listaCodigos.ElementAt(lbxClientes.SelectedIndex).ToString());
+            try
+            {
+                unDVD = c.LeerDVD(listaCodigos.ElementAt(lbxClientes.SelectedIndex).ToString());
 
-            tbxCodigo.Text = unDVD.Codigo.ToString();
-            tbxTitulo.Text = unDVD.Titulo;
-            tbxArtista.Text = unDVD.Artista;
-            tbxPais.Text = unDVD.Pais;
-            tbxCompania.Text = unDVD.Compania;
-            tbxPrecio.Text = unDVD.Precio.ToString();
-            tbxAnio.Text = unDVD.Anio.ToString();
+                tbxCodigo.Text = unDVD.Codigo.ToString();
+                tbxTitulo.Text = unDVD.Titulo;
+                tbxArtista.Text = unDVD.Artista;
+                tbxPais.Text = unDVD.Pais;
+                tbxCompania.Text = unDVD.Compania;
+                tbxPrecio.Text = unDVD.Precio.ToString();
+                tbxAnio.Text = unDVD.Anio.ToString();
+            }
+            catch { }
         }
         #endregion
     }
