@@ -1,0 +1,7 @@
+C:\Users\Lfrty\Desktop\Proyectos Git\catalogoDVD\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\obj\x86\Debug\App_CatalogoCD.csprojResolveAssemblyReference.cache
+C:\Users\Lfrty\Desktop\Proyectos Git\catalogoDVD\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\bin\Debug\App_CatalogoCD.exe
+C:\Users\Lfrty\Desktop\Proyectos Git\catalogoDVD\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\bin\Debug\App_CatalogoCD.pdb
+C:\Users\Lfrty\Desktop\Proyectos Git\catalogoDVD\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\bin\Debug\System.Data.SQLite.dll
+C:\Users\Lfrty\Desktop\Proyectos Git\catalogoDVD\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Lfrty\Desktop\Proyectos Git\catalogoDVD\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\obj\x86\Debug\App_CatalogoCD.exe
+C:\Users\Lfrty\Desktop\Proyectos Git\catalogoDVD\catalogoDVD\Catalogo de CDROM MySQL y SQLite\App_CatalogoCD\App_CatalogoCD\obj\x86\Debug\App_CatalogoCD.pdb
