@@ -60,6 +60,7 @@ namespace App_CatalogoCD
                     (ushort)rnd.Next(1900, 2016));
                 
                 _catalogoDVD.Add(unDVD);
+                dao.Insertar(unDVD);
             }
         }
 
@@ -75,6 +76,7 @@ namespace App_CatalogoCD
                     (ushort)rnd.Next(1900, 2016));
 
             _catalogoDVD.Add(unDVD);
+            dao.Insertar(unDVD);
             //Console.WriteLine("Resultado de la inserción: " + dao.Insertar(unDVD));
         }
 
@@ -123,12 +125,21 @@ namespace App_CatalogoCD
             }
         }
 
-        public void XmlAFichero()
+        public void XmlAFichero(string path)
         {
             // Manda a fichero (c:/salida.xml), la lista de los CDROM en formato XML
             // Creo un flujo hacia el fichero
-			String ruta = "c:\\basura\\salida.xml";
-            FileStream fs1 = new FileStream(@ruta, FileMode.Create);
+			string ruta = "c:\\basura\\salida.xml";
+            FileStream fs1;
+
+            if (path == string.Empty)
+            {
+                fs1 = new FileStream(@ruta, FileMode.Create);
+            }
+            else
+            {
+                fs1 = new FileStream(path, FileMode.Create);
+            }
             // Guardo el dispositivo de salida (pantalla) en tmp
             TextWriter tmp = Console.Out;
             // Fichero de salida

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace App_CatalogoCD
 {
     public partial class GUI : Form
     {
+        string ruta;
         string[] ficheroXML;
         static Catalogo c;
         List<int> listaCodigos;
@@ -24,6 +26,7 @@ namespace App_CatalogoCD
 
         private void Inicializar()
         {
+            ruta = string.Empty;
             ficheroXML = new string[] { };
             listaCodigos = new List<int>();
             try
@@ -36,59 +39,15 @@ namespace App_CatalogoCD
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (comboBox1.SelectedIndex)
-            {
-                case 0:
-                    btnBoton1.Enabled = true;
-                    btnBoton1.Text = "Leer DVD´s";
-                    btnBoton2.Enabled = false;
-                    break;
-                case 1:
-                    btnBoton1.Enabled = true;
-                    btnBoton1.Text = "Leer en formato XML";
-                    btnBoton2.Enabled = false;
-                    break;
-                case 2:
-                    btnBoton1.Enabled = true;
-                    btnBoton1.Text = "Añadir DVD al azar";
-                    btnBoton2.Enabled = false;
-                    break;
-                case 3:
-                    btnBoton1.Text = "Eliminar DVD";
-                    btnBoton1.Enabled = false;
-                    btnBoton2.Enabled = false;
-                    break;
-                case 4:
-                    btnBoton1.Text = "Modificar DVD";
-                    btnBoton1.Enabled = false;
-                    btnBoton2.Enabled = false;
-                    break;
-                case 5:
-                    btnBoton1.Enabled = true;
-                    btnBoton2.Enabled = true;
-                    btnBoton1.Text = "Volcar";
-                    btnBoton2.Text = "Elegir fichero";
-                    break;
-                case 6:
-                    btnBoton1.Enabled = true;
-                    btnBoton1.Text = "Listar por país";
-                    btnBoton2.Enabled = false;
-                    break;
-                default:
-                    break;
-            }
-        }
-
+        #region MIS MÉTODOS
         private void RellenarListBox()
         {
             listaCodigos.Clear();
-            comboBox1.Items.Clear();
+            lbxClientes.Items.Clear();
             foreach (var item in c.CatalogoDVD)
             {
                 listaCodigos.Add(item.Codigo);
-                comboBox1.Items.Add(item.Codigo + ", " + item.Titulo + ", " + item.Artista + ", " + item.Pais + ", " + item.Compania + ", " + item.Precio + ", " + item.Anio);
+                lbxClientes.Items.Add(item.Codigo + ", " + item.Titulo + ", " + item.Artista + ", " + item.Pais + ", " + item.Compania + ", " + item.Precio + ", " + item.Anio);
             }
         }
 
@@ -103,34 +62,100 @@ namespace App_CatalogoCD
                 case 1:
                     c.LeerDVD();
                     ficheroXML = c.Xml.Split('\n');
-                    comboBox1.Items.Clear();
-                    comboBox1.Items.AddRange(ficheroXML);
+                    lbxClientes.Items.Clear();
+                    lbxClientes.Items.AddRange(ficheroXML);
                     break;
                 case 2:
-                    c.AddEntrada(tbxCodigo.Text);
-                    RellenarListBox();
+                    if (tbxCodigo.Text != string.Empty)
+                    {
+                        c.AddEntrada(tbxCodigo.Text);
+                        c.LeerDVD();
+                        RellenarListBox();
+                    }
+                    else
+                        MessageBox.Show("Indique el código para el DVD aleatorio a introducir", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     break;
                 case 3:
-                    c.BorrarDVD(tbxCodigo.Text);
-                    RellenarListBox();
+                    if (tbxCodigo.Text != string.Empty)
+                    {
+                        c.BorrarDVD(tbxCodigo.Text);
+                        c.LeerDVD();
+                        RellenarListBox();
+                    }
+                    else
+                        MessageBox.Show("Indique el código para el DVD a borrar", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     break;
                 case 4:
-                    dvd unDVD = c.LeerDVD(tbxCodigo.Text);
-                    unDVD.Titulo = tbxTitulo.Text;
-                    unDVD.Artista = tbxArtista.Text;
-                    unDVD.Pais = tbxPais.Text;
-                    unDVD.Compania = tbxCompania.Text;
-                    unDVD.Precio = Convert.ToDecimal(tbxPrecio.Text);
-                    unDVD.Anio = Convert.ToUInt16(tbxAnio.Text);
-                    c.ActualizarDVD(unDVD);
+                    if (tbxCodigo.Text != string.Empty)
+                    {
+                        dvd unDVD = c.LeerDVD(tbxCodigo.Text);
+                        unDVD.Titulo = tbxTitulo.Text;
+                        unDVD.Artista = tbxArtista.Text;
+                        unDVD.Pais = tbxPais.Text;
+                        unDVD.Compania = tbxCompania.Text;
+                        unDVD.Precio = Convert.ToDecimal(tbxPrecio.Text);
+                        unDVD.Anio = Convert.ToUInt16(tbxAnio.Text);
+                        c.ActualizarDVD(unDVD);
+                        c.LeerDVD();
+                        RellenarListBox();
+                    }
+                    else
+                        MessageBox.Show("Indique el código para el DVD a modificar", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     break;
                 case 5:
-                    string fXml = c.Xml;
-                    c.XmlAFichero();
+                    c.XmlAFichero(ruta);
                     break;
                 case 6:
-                    c.FiltrarPorPais();
-                    RellenarListBox();
+                    c.FiltrarPorPais(); //Este no funciona porque la conexión es a Mysql, el resto a SQLite
+                    //RellenarListBox();
+                    break;
+                default:
+                    break;
+            }
+        }
+        #endregion
+
+        #region MANEJADORES DE EVENTOS
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBox1.SelectedIndex)
+            {
+                case 0:
+                    btnBoton1.Enabled = true;
+                    btnBoton1.Text = "Leer DVD´s";
+                    btnBoton2.Visible = false;
+                    break;
+                case 1:
+                    btnBoton1.Enabled = true;
+                    btnBoton1.Text = "Leer en formato XML";
+                    btnBoton2.Visible = false;
+                    break;
+                case 2:
+                    btnBoton1.Enabled = true;
+                    btnBoton1.Text = "Añadir DVD al azar";
+                    btnBoton2.Visible = false;
+                    break;
+                case 3:
+                    btnBoton1.Text = "Eliminar DVD";
+                    btnBoton1.Enabled = true;
+                    btnBoton2.Visible = false;
+                    break;
+                case 4:
+                    btnBoton1.Text = "Modificar DVD";
+                    btnBoton1.Enabled = true;
+                    btnBoton2.Visible = false;
+                    break;
+                case 5:
+                    btnBoton1.Enabled = true;
+                    btnBoton2.Enabled = true;
+                    btnBoton2.Visible = true;
+                    btnBoton1.Text = "Volcar";
+                    btnBoton2.Text = "Elegir ruta";
+                    break;
+                case 6:
+                    btnBoton1.Enabled = true;
+                    btnBoton1.Text = "Listar por país";
+                    btnBoton2.Visible = false;
                     break;
                 default:
                     break;
@@ -144,7 +169,16 @@ namespace App_CatalogoCD
 
         private void btnBoton2_Click(object sender, EventArgs e)
         {
-            Opciones();
+            SaveFileDialog obtenerRuta = new SaveFileDialog();
+
+            obtenerRuta.Filter = "xml files (*.xml)|*.xml";
+
+            if (obtenerRuta.ShowDialog() == DialogResult.OK)
+            {
+                ruta = obtenerRuta.FileName;
+                using (File.Create(ruta)) ;
+            }
+                
         }
 
         private void tbxNumeros_KeyPress(object sender, KeyPressEventArgs e)
@@ -166,7 +200,8 @@ namespace App_CatalogoCD
             tbxPais.Text = unDVD.Pais;
             tbxCompania.Text = unDVD.Compania;
             tbxPrecio.Text = unDVD.Precio.ToString();
-            tbxAnio.Text = unDVD.Anio.ToString();            
+            tbxAnio.Text = unDVD.Anio.ToString();
         }
+        #endregion
     }
 }
