@@ -6,7 +6,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{26F667F9-DA7C-4612-818C-3B21D7DA7198}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>App_CatalogoCD</RootNamespace>
     <AssemblyName>App_CatalogoCD</AssemblyName>

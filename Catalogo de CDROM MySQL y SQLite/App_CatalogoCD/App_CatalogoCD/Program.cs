@@ -1,15 +1,17 @@
 ﻿using System;
+using System.Windows.Forms;
 //---------------------------------------------------------------------------------
 
 namespace App_CatalogoCD
 {
     class Program
     {
-        static void Main(string[] args)
+        [STAThread]
+        static void Main()
         {
-            new GUI();
-			//new UI ();
-            Console.ReadLine();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new GUI());
         }
     }
 }
