@@ -138,5 +138,37 @@ namespace App_CatalogoCD
 			else
 				return 0;
 		}
+
+        public List<dvd> SeleccionarPorPais(string codigo)
+        {
+            List<dvd> resultado = new List<dvd>();
+            string sql;
+            if (codigo == null)
+                sql = "select codigo,titulo,artista,pais,compania,precio,anio from dvd";
+            else
+                sql = "select codigo,titulo,artista,pais,compania,precio,anio from dvd where pais = '" + codigo + "';";
+
+            SQLiteCommand cmd = new SQLiteCommand(sql, conexion);
+            // construimos un datareader y ejecutamos el comando sql
+
+            SQLiteDataReader lector = cmd.ExecuteReader();
+            //recuperamos los datos y volcamos en el resultado a devolver
+
+            while (lector.Read())
+            {
+                dvd unDVD = new dvd();
+                unDVD.Codigo = ushort.Parse(lector["codigo"].ToString());
+                unDVD.Titulo = lector["titulo"].ToString();
+                unDVD.Artista = lector["artista"].ToString();
+                unDVD.Pais = lector["pais"].ToString();
+                unDVD.Compania = lector["compania"].ToString();
+                unDVD.Precio = decimal.Parse(lector["precio"].ToString());
+                unDVD.Anio = ushort.Parse(lector["anio"].ToString());
+
+                resultado.Add(unDVD);
+            }
+            lector.Close();
+            return resultado;
+        }
 	}
 }

@@ -12,7 +12,7 @@ namespace App_CatalogoCD
 		static public ushort contadorParaCodigo = 100;
 
         List<dvd> _catalogoDVD = new List<dvd>();
-        //DAOdvd dao = new DAOdvd();
+        //DAOdvd daoMy = new DAOdvd();
 		DAOdvdSQLite dao = new DAOdvdSQLite();
 
         /// <summary>
@@ -24,13 +24,14 @@ namespace App_CatalogoCD
             try
                 {
                     if (dao.Conectar())
-                        Console.WriteLine("Conexión con éxito a la BD");
-					else 
-						Console.WriteLine("No se puede conectar a la BD");
+                        ;//Console.WriteLine("Conexión con éxito a la BD");
+                    else
+                        ;//Console.WriteLine("No se puede conectar a la BD");
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("ERROR: " + e.Message);
+                    //Console.WriteLine("ERROR: " + e.Message);
+                    throw new Exception("ERROR: " + e.Message);
                 }
 				this.LeerDVD ();
         }
@@ -59,6 +60,7 @@ namespace App_CatalogoCD
                     (ushort)rnd.Next(1900, 2016));
                 
                 _catalogoDVD.Add(unDVD);
+                dao.Insertar(unDVD);
             }
         }
 
@@ -74,7 +76,8 @@ namespace App_CatalogoCD
                     (ushort)rnd.Next(1900, 2016));
 
             _catalogoDVD.Add(unDVD);
-            Console.WriteLine("Resultado de la inserción: " + dao.Insertar(unDVD));
+            dao.Insertar(unDVD);
+            //Console.WriteLine("Resultado de la inserción: " + dao.Insertar(unDVD));
         }
 
         public void LeerDVD()
@@ -122,12 +125,21 @@ namespace App_CatalogoCD
             }
         }
 
-        public void XmlAFichero()
+        public void XmlAFichero(string path)
         {
             // Manda a fichero (c:/salida.xml), la lista de los CDROM en formato XML
             // Creo un flujo hacia el fichero
-			String ruta = "c:\\basura\\salida.xml";
-            FileStream fs1 = new FileStream(@ruta, FileMode.Create);
+			string ruta = "c:\\basura\\salida.xml";
+            FileStream fs1;
+
+            if (path == string.Empty)
+            {
+                fs1 = new FileStream(@ruta, FileMode.Create);
+            }
+            else
+            {
+                fs1 = new FileStream(path, FileMode.Create);
+            }
             // Guardo el dispositivo de salida (pantalla) en tmp
             TextWriter tmp = Console.Out;
             // Fichero de salida
@@ -136,22 +148,22 @@ namespace App_CatalogoCD
             // Esto se escribirá en el fichero
             Console.WriteLine(this.Xml);
             Console.SetOut(tmp);    // Reestablezco la salida estandar
-            Console.WriteLine(@"Se ha creado el fichero: " + ruta);
+            //Console.WriteLine(@"Se ha creado el fichero: " + ruta);
             sw1.Close();
         }
 
 		public void FiltrarPorPais() 
 		{
-			//_catalogoDVD = dao.SeleccionarPorPais("US");
+			_catalogoDVD = dao.SeleccionarPorPais("US");
 		}
 
-		public override string ToString ()
+		/*public override string ToString ()
 		{
 			String resultado = "\n";
 			foreach (var item in _catalogoDVD) {
 				resultado = resultado + item.ToString () + "\n";
 			}
 			return resultado;
-		}
+		}*/
     }
 }
