@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI));
             this.lblCompania = new System.Windows.Forms.Label();
             this.lblPais = new System.Windows.Forms.Label();
             this.lblArtista = new System.Windows.Forms.Label();
@@ -48,6 +49,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnBoton1 = new System.Windows.Forms.Button();
             this.btnBoton2 = new System.Windows.Forms.Button();
+            this.lblDecorativo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblCompania
@@ -143,19 +145,21 @@
             // 
             // lbxClientes
             // 
+            this.lbxClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lbxClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbxClientes.FormattingEnabled = true;
             this.lbxClientes.HorizontalScrollbar = true;
             this.lbxClientes.ItemHeight = 20;
             this.lbxClientes.Location = new System.Drawing.Point(332, 42);
             this.lbxClientes.Name = "lbxClientes";
-            this.lbxClientes.Size = new System.Drawing.Size(369, 424);
+            this.lbxClientes.Size = new System.Drawing.Size(497, 440);
             this.lbxClientes.TabIndex = 13;
             this.lbxClientes.SelectedIndexChanged += new System.EventHandler(this.lbxClientes_SelectedIndexChanged);
             // 
             // lblDVD
             // 
             this.lblDVD.AutoSize = true;
+            this.lblDVD.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblDVD.Font = new System.Drawing.Font("Open Sans", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDVD.Location = new System.Drawing.Point(356, 9);
             this.lblDVD.Name = "lblDVD";
@@ -204,8 +208,9 @@
             // lblOpciones
             // 
             this.lblOpciones.AutoSize = true;
+            this.lblOpciones.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblOpciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOpciones.Location = new System.Drawing.Point(12, 15);
+            this.lblOpciones.Location = new System.Drawing.Point(12, 13);
             this.lblOpciones.Name = "lblOpciones";
             this.lblOpciones.Size = new System.Drawing.Size(84, 20);
             this.lblOpciones.TabIndex = 29;
@@ -213,6 +218,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -223,7 +229,7 @@
             "Modificar un DVD",
             "Volcar XML a fichero",
             "Listar DVD por pais"});
-            this.comboBox1.Location = new System.Drawing.Point(103, 13);
+            this.comboBox1.Location = new System.Drawing.Point(102, 9);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(208, 26);
             this.comboBox1.TabIndex = 30;
@@ -232,34 +238,45 @@
             // btnBoton1
             // 
             this.btnBoton1.AutoSize = true;
-            this.btnBoton1.Enabled = false;
+            this.btnBoton1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnBoton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBoton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBoton1.Location = new System.Drawing.Point(16, 430);
             this.btnBoton1.Name = "btnBoton1";
             this.btnBoton1.Size = new System.Drawing.Size(134, 47);
             this.btnBoton1.TabIndex = 31;
-            this.btnBoton1.Text = "button1";
-            this.btnBoton1.UseVisualStyleBackColor = true;
+            this.btnBoton1.UseVisualStyleBackColor = false;
             this.btnBoton1.Click += new System.EventHandler(this.btnBoton1_Click);
             // 
             // btnBoton2
             // 
             this.btnBoton2.AutoSize = true;
-            this.btnBoton2.Enabled = false;
+            this.btnBoton2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnBoton2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBoton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBoton2.Location = new System.Drawing.Point(170, 429);
             this.btnBoton2.Name = "btnBoton2";
             this.btnBoton2.Size = new System.Drawing.Size(131, 48);
             this.btnBoton2.TabIndex = 32;
-            this.btnBoton2.Text = "button2";
-            this.btnBoton2.UseVisualStyleBackColor = true;
+            this.btnBoton2.UseVisualStyleBackColor = false;
             this.btnBoton2.Click += new System.EventHandler(this.btnBoton2_Click);
+            // 
+            // lblDecorativo
+            // 
+            this.lblDecorativo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblDecorativo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDecorativo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblDecorativo.Location = new System.Drawing.Point(0, 0);
+            this.lblDecorativo.Name = "lblDecorativo";
+            this.lblDecorativo.Size = new System.Drawing.Size(841, 39);
+            this.lblDecorativo.TabIndex = 33;
             // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 489);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(841, 489);
             this.Controls.Add(this.btnBoton2);
             this.Controls.Add(this.btnBoton1);
             this.Controls.Add(this.comboBox1);
@@ -280,8 +297,13 @@
             this.Controls.Add(this.tbxTitulo);
             this.Controls.Add(this.tbxCodigo);
             this.Controls.Add(this.lbxClientes);
+            this.Controls.Add(this.lblDecorativo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "GUI";
-            this.Text = "GUI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Catálogo de DVD´s - Gestión";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,5 +331,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btnBoton1;
         private System.Windows.Forms.Button btnBoton2;
+        private System.Windows.Forms.Label lblDecorativo;
     }
 }
