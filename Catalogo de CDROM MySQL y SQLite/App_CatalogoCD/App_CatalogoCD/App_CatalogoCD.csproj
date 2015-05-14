@@ -40,7 +40,10 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite">
-      <HintPath>C:\Program Files\System.Data.SQLite\2012\bin\System.Data.SQLite.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Escritorio\DLLs_SQLITE\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6">
+      <HintPath>..\..\..\..\..\..\..\Escritorio\DLLs_SQLITE\System.Data.SQLite.EF6.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />

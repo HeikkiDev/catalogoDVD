@@ -50,6 +50,7 @@
             this.btnBoton1 = new System.Windows.Forms.Button();
             this.btnBoton2 = new System.Windows.Forms.Button();
             this.lblDecorativo = new System.Windows.Forms.Label();
+            this.lblEstado = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblCompania
@@ -271,12 +272,24 @@
             this.lblDecorativo.Size = new System.Drawing.Size(841, 39);
             this.lblDecorativo.TabIndex = 33;
             // 
+            // lblEstado
+            // 
+            this.lblEstado.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblEstado.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.Location = new System.Drawing.Point(0, 485);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(841, 36);
+            this.lblEstado.TabIndex = 34;
+            this.lblEstado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(841, 489);
+            this.ClientSize = new System.Drawing.Size(841, 521);
+            this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.btnBoton2);
             this.Controls.Add(this.btnBoton1);
             this.Controls.Add(this.comboBox1);
@@ -332,5 +345,6 @@
         private System.Windows.Forms.Button btnBoton1;
         private System.Windows.Forms.Button btnBoton2;
         private System.Windows.Forms.Label lblDecorativo;
+        private System.Windows.Forms.Label lblEstado;
     }
 }

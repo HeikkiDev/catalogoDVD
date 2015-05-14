@@ -35,7 +35,8 @@ namespace App_CatalogoCD
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw new Exception(e.Message);
+                //MessageBox.Show(e.Message, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             btnBoton1.Visible = false;
             btnBoton2.Visible = false;
@@ -75,6 +76,7 @@ namespace App_CatalogoCD
                         c.AddEntrada(tbxCodigo.Text);
                         c.LeerDVD();
                         RellenarListBox();
+                        lblEstado.Text = "DVD añadido con éxito...";
                     }
                     else
                         MessageBox.Show("Indique el código para el DVD aleatorio a introducir", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -85,6 +87,7 @@ namespace App_CatalogoCD
                         c.BorrarDVD(tbxCodigo.Text);
                         c.LeerDVD();
                         RellenarListBox();
+                        lblEstado.Text = "DVD borrado con éxito...";
                     }
                     else
                         MessageBox.Show("Indique el código para el DVD a borrar", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -102,12 +105,14 @@ namespace App_CatalogoCD
                         c.ActualizarDVD(unDVD);
                         c.LeerDVD();
                         RellenarListBox();
+                        lblEstado.Text = "DVD modificado con éxito...";
                     }
                     else
                         MessageBox.Show("Indique el código para el DVD a modificar", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     break;
                 case 5:
                     c.XmlAFichero(ruta);
+                    lblEstado.Text = "Fichero volcado con éxito...";
                     break;
                 case 6:
                     c.FiltrarPorPais();
