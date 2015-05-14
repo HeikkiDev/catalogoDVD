@@ -71,6 +71,9 @@ namespace App_CatalogoCD
                     LimpiarTBoxs();
                     break;
                 case 2:
+                    if (listaCodigos.Contains(Convert.ToInt32(tbxCodigo.Text)))
+                        MessageBox.Show("Código ya existente, indique otro...", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
                     if (tbxCodigo.Text != string.Empty)
                     {
                         c.AddEntrada(tbxCodigo.Text);
@@ -158,6 +161,7 @@ namespace App_CatalogoCD
                     btnBoton1.Text = "Añadir DVD al azar";
                     btnBoton2.Visible = false;
                     lblEstado.Text = "";
+                    LimpiarTBoxs();
                     break;
                 case 3:
                     btnBoton1.Text = "Eliminar DVD";
@@ -212,6 +216,14 @@ namespace App_CatalogoCD
         private void tbxNumeros_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back)
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void tbxPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar==',')
                 e.Handled = false;
             else
                 e.Handled = true;
