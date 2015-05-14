@@ -117,6 +117,7 @@ namespace App_CatalogoCD
                 case 6:
                     c.FiltrarPorPais();
                     RellenarListBox();
+                    lblEstado.Text = "Siempre lista los de US...";
                     break;
                 default:
                     break;
@@ -144,26 +145,31 @@ namespace App_CatalogoCD
                     btnBoton1.Visible = true;
                     btnBoton1.Text = "Leer DVD´s";
                     btnBoton2.Visible = false;
+                    lblEstado.Text = "";
                     break;
                 case 1:
                     btnBoton1.Visible = true;
                     btnBoton1.Text = "Leer en formato XML";
                     btnBoton2.Visible = false;
+                    lblEstado.Text = "";
                     break;
                 case 2:
                     btnBoton1.Visible = true;
                     btnBoton1.Text = "Añadir DVD al azar";
                     btnBoton2.Visible = false;
+                    lblEstado.Text = "";
                     break;
                 case 3:
                     btnBoton1.Text = "Eliminar DVD";
                     btnBoton1.Visible = true;
                     btnBoton2.Visible = false;
+                    lblEstado.Text = "";
                     break;
                 case 4:
                     btnBoton1.Text = "Modificar DVD";
                     btnBoton1.Visible = true;
                     btnBoton2.Visible = false;
+                    lblEstado.Text = "";
                     break;
                 case 5:
                     btnBoton1.Visible = true;
@@ -171,11 +177,13 @@ namespace App_CatalogoCD
                     btnBoton2.Visible = true;
                     btnBoton1.Text = "Volcar";
                     btnBoton2.Text = "Elegir ruta";
+                    lblEstado.Text = "";
                     break;
                 case 6:
                     btnBoton1.Visible = true;
                     btnBoton1.Text = "Listar por país";
                     btnBoton2.Visible = false;
+                    lblEstado.Text = "";
                     break;
                 default:
                     break;
