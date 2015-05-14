@@ -48,6 +48,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\DLLs_SQLITE\System.Data.SQLite.EF6.dll</HintPath>
     </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +58,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Catalogo.cs" />
+    <Compile Include="CatalogoDVD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CatalogoDVD.Designer.cs">
+      <DependentUpon>CatalogoDVD.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAOdvd.cs" />
     <Compile Include="dvd.cs" />
     <Compile Include="Program.cs" />
@@ -65,6 +73,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="DiagramaDeClases.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CatalogoDVD.resx">
+      <DependentUpon>CatalogoDVD.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
