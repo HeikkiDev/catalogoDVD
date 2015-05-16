@@ -40,6 +40,7 @@ namespace App_CatalogoCD
             }
             btnBoton1.Visible = false;
             btnBoton2.Visible = false;
+            SoloLecturaTbox(true);
         }
 
         #region MIS MÉTODOS
@@ -71,15 +72,17 @@ namespace App_CatalogoCD
                     LimpiarTBoxs();
                     break;
                 case 2:
-                    if (listaCodigos.Contains(Convert.ToInt32(tbxCodigo.Text)))
-                        MessageBox.Show("Código ya existente, indique otro...", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
                     if (tbxCodigo.Text != string.Empty)
                     {
-                        c.AddEntrada(tbxCodigo.Text);
-                        c.LeerDVD();
-                        RellenarListBox();
-                        lblEstado.Text = "DVD añadido con éxito...";
+                        if (listaCodigos.Contains(Convert.ToInt32(tbxCodigo.Text)))
+                            MessageBox.Show("Código ya existente, indique otro...", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        else
+                        {
+                            c.AddEntrada(tbxCodigo.Text);
+                            c.LeerDVD();
+                            RellenarListBox();
+                            lblEstado.Text = "DVD añadido con éxito...";
+                        }
                     }
                     else
                         MessageBox.Show("Indique el código para el DVD aleatorio a introducir", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -93,7 +96,7 @@ namespace App_CatalogoCD
                         lblEstado.Text = "DVD borrado con éxito...";
                     }
                     else
-                        MessageBox.Show("Indique el código para el DVD a borrar", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Seleccione el DVD a borrar", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     break;
                 case 4:
                     if (tbxCodigo.Text != string.Empty)
@@ -111,7 +114,7 @@ namespace App_CatalogoCD
                         lblEstado.Text = "DVD modificado con éxito...";
                     }
                     else
-                        MessageBox.Show("Indique el código para el DVD a modificar", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Seleccione el DVD a modificar", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     break;
                 case 5:
                     c.XmlAFichero(ruta);
@@ -137,6 +140,17 @@ namespace App_CatalogoCD
             tbxPrecio.Text = string.Empty;
             tbxAnio.Text = string.Empty;
         }
+
+        private void SoloLecturaTbox(bool condicion)
+        {
+            tbxCodigo.ReadOnly = condicion;
+            tbxTitulo.ReadOnly = condicion;
+            tbxPrecio.ReadOnly = condicion;
+            tbxCompania.ReadOnly = condicion;
+            tbxAnio.ReadOnly = condicion;
+            tbxArtista.ReadOnly = condicion;
+            tbxPais.ReadOnly = condicion;
+        }
         #endregion
 
         #region MANEJADORES DE EVENTOS
@@ -149,12 +163,14 @@ namespace App_CatalogoCD
                     btnBoton1.Text = "Leer DVD´s";
                     btnBoton2.Visible = false;
                     lblEstado.Text = "";
+                    SoloLecturaTbox(true);
                     break;
                 case 1:
                     btnBoton1.Visible = true;
                     btnBoton1.Text = "Leer en formato XML";
                     btnBoton2.Visible = false;
                     lblEstado.Text = "";
+                    SoloLecturaTbox(true);
                     break;
                 case 2:
                     btnBoton1.Visible = true;
@@ -162,18 +178,23 @@ namespace App_CatalogoCD
                     btnBoton2.Visible = false;
                     lblEstado.Text = "";
                     LimpiarTBoxs();
+                    SoloLecturaTbox(true);
+                    tbxCodigo.ReadOnly = false;
                     break;
                 case 3:
                     btnBoton1.Text = "Eliminar DVD";
                     btnBoton1.Visible = true;
                     btnBoton2.Visible = false;
                     lblEstado.Text = "";
+                    SoloLecturaTbox(true);
                     break;
                 case 4:
                     btnBoton1.Text = "Modificar DVD";
                     btnBoton1.Visible = true;
                     btnBoton2.Visible = false;
                     lblEstado.Text = "";
+                    SoloLecturaTbox(false);
+                    tbxCodigo.ReadOnly = true;
                     break;
                 case 5:
                     btnBoton1.Visible = true;
@@ -182,12 +203,14 @@ namespace App_CatalogoCD
                     btnBoton1.Text = "Volcar";
                     btnBoton2.Text = "Elegir ruta";
                     lblEstado.Text = "";
+                    SoloLecturaTbox(true);
                     break;
                 case 6:
                     btnBoton1.Visible = true;
                     btnBoton1.Text = "Listar por país";
                     btnBoton2.Visible = false;
                     lblEstado.Text = "";
+                    SoloLecturaTbox(true);
                     break;
                 default:
                     break;
